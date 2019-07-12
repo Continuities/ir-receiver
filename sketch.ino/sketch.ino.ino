@@ -1,9 +1,18 @@
-void setup() {
-  // put your setup code here, to run once:
+#include <IRremote.h>
 
-}
+int RECV_PIN = 11; // define input pin on Arduino 
+IRrecv irrecv(RECV_PIN); 
+decode_results results; // decode_results class is defined in IRremote.h
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void setup() { 
+  Serial.begin(9600); 
+  irrecv.enableIRIn(); // Start the receiver 
+} 
 
+void loop() { 
+  if (irrecv.decode(&results)) {
+    Serial.println(results.value, HEX); 
+    irrecv.resume(); // Receive the next value 
+  }
+  delay (100); // small delay to prevent reading errors
 }
