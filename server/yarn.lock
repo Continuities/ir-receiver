@@ -156,11 +156,6 @@ cliui@^5.0.0:
     strip-ansi "^5.2.0"
     wrap-ansi "^5.1.0"
 
-co@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
-  integrity sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
-
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
@@ -187,13 +182,6 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-
-debug@^2.3.2:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
-  integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
-  dependencies:
-    ms "2.0.0"
 
 debug@^4.1.1:
   version "4.1.1"
@@ -240,15 +228,6 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   integrity sha512-1MkrZNvWTKCaigbn+W15elq2BB/L22nqrSY5DKlo3X6+vclJm8Bb5djXJBmEX6fS3+zCh/F4VBK5Z2KxJt4s2Q==
   dependencies:
     once "^1.4.0"
-
-eventemitter-co@^1.0.4:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/eventemitter-co/-/eventemitter-co-1.0.5.tgz#6ee6206bd98f5596fb1d99c425f9a117f5717c32"
-  integrity sha1-buYga9mPVZb7HZnEJfmhF/VxfDI=
-  dependencies:
-    co "^4.6.0"
-    mout "^1.0.0"
-    uclass "^2.4.0"
 
 expand-template@^2.0.3:
   version "2.0.3"
@@ -358,16 +337,6 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mout@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mout/-/mout-1.1.0.tgz#0b29d41e6a80fa9e2d4a5be9d602e1d9d02177f6"
-  integrity sha512-XsP0vf4As6BfqglxZqbqQ8SR6KQot2AgxvR0gG+WtUkf90vUXchMOZQtPf/Hml1rEffJupqL/tIrU6EYhsUQjw==
-
-ms@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
-  integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
-
 ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
@@ -409,13 +378,6 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
-
-nyks@^4.0.7:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/nyks/-/nyks-4.4.0.tgz#d61cc6931dc1bcd059e61689a64348aaba48255d"
-  integrity sha512-+BwXiqGDXIxckHvSfp/VWAiuau1BaJ90OdDkp+Ixo5ok2ejBzz8UmgCiivhy9W8n1GTL2v3OyK+hNQNVQqP0Nw==
-  dependencies:
-    mout "^1.0.0"
 
 object-assign@^4.1.0:
   version "4.1.1"
@@ -683,34 +645,10 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-uclass@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/uclass/-/uclass-2.4.0.tgz#12ed560680bff5b0482069375000fd1a9a8e4528"
-  integrity sha1-Eu1WBoC/9bBIIGk3UAD9GpqORSg=
-  dependencies:
-    mout "^1.0.0"
-
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
-
-vlc-player@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vlc-player/-/vlc-player-1.1.0.tgz#96cbfa08f5018842dbcbf9cb2ab96342496651c3"
-  integrity sha512-QcwWYsXYv3XwbbAQZEkM8iB2vdKQFgBgoe1dy+aEgSt64793jrERQTEgF0iKDTpCwWhy7XatPlIwLwfoRs4OHw==
-
-vlc-remote@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/vlc-remote/-/vlc-remote-4.2.2.tgz#826574131299ef1d3fa2fc2a7e59c38581fa6061"
-  integrity sha512-A91U/xL6D0tIFkGVFXQ5nm7Cu+A2n6IUj2ZmsskUOeLVNa996tJARH0sVlayceQctMVaQEHEwFbfgZC0uN0CHg==
-  dependencies:
-    debug "^2.3.2"
-    eventemitter-co "^1.0.4"
-    mout "^1.0.0"
-    nyks "^4.0.7"
-  optionalDependencies:
-    vlc-player "^1.1.0"
 
 which-module@^2.0.0:
   version "2.0.0"

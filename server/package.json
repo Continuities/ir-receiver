@@ -9,7 +9,6 @@
   "license": "MIT",
   "dependencies": {
     "serialport": "^7.1.5",
-    "vlc-remote": "^4.2.2",
     "yargs": "^13.3.0"
   }
 }
