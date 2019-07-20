@@ -14,11 +14,21 @@ const Button = {
 };
 
 const codeMap = {
-  // TODO
-  'BE3BB37': Button.CHANNELUP
+  '4DE74847': Button.CHANNELUP,
+  'B8781EF': Button.CHANNELDOWN,
+  'F7283C77': Button.ONE,
+  '757FB4DF': Button.TWO,
+  'B33B4597': Button.THREE,
+  '3C03E507': Button.FOUR,
+  'E705551F': Button.FIVE,
+  'A4A58EC7': Button.SIX,
+  'E2E45F7F': Button.SEVEN,
+  '6BACFEEF': Button.EIGHT,
+  'E88E91F': Button.NINE,
+  '7D168BCF': Button.ZERO
 };
 
 module.exports = {
   Button,
-  decode: key => codeMap[key]
+  decode: k => codeMap[k]
 };

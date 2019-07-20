@@ -1,7 +1,7 @@
 module.exports = (fn, delay) => {
   let last = undefined;
   return (...args) => {
-    if (Date.now() - last < delay) {
+    if (last && Date.now() - last < delay) {
       return;
     }
     last = Date.now();

@@ -6,7 +6,7 @@ function listener(handler) {
   const port = new SerialPort(device, { baudRate: baud });
   const parser = port.pipe(new Readline({ delimiter: '\n' }));
   port.on("open", () => console.log('serial port open'));
-  parser.on('data', handler);
+  parser.on('data', d => handler(d.trim()));
 }
 
 function mock(data, delay) {
