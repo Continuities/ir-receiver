@@ -2,6 +2,9 @@ const { socket } = require('./config.js');
 const { exec } = require('child_process');
 const channel = require('./channel.js');
 
+const CHANNEL_DURATION = 60 * 60 * 1000; // in milliseconds
+const SEEK_DELAY = 300; // ms GROOOOOSSSS
+
 /**
 
 +----[ Remote control commands ]
@@ -72,31 +75,37 @@ function syscall(command) {
 }
 
 function play(file) {
-  return tell_vlc(`clear\r\nf on\r\nadd ${file}`);
+  return tell_vlc(`clear\r\nf on\r\nadd ${file}\r\nrepeat on`);
 }
 
-function seek(time) {
-  return tell_vlc(`seek ${time}`);
+function seek(timeInSeconds) {
+  return tell_vlc(`seek ${timeInSeconds}`);
 }
 
+function setChannel(newChannel) {
+  currentChannel = newChannel % channel.length;
+  if (currentChannel < 0) {
+    currentChannel += channel.length;
+  }
+  console.log(`[video] setting channel ${currentChannel}`);
+  play(channel[currentChannel]);
+  if (startTime == null) {
+    startTime = Date.now();
+  }
+  else {
+    const timeDelta = ((Date.now() - startTime) % CHANNEL_DURATION) / 1000;
+    // This seems to need to wait for the new video to actually start
+    // before it will work. Gross.
+    console.log(`[video] seeking to ${timeDelta}`)
+    setTimeout(() => seek(timeDelta), SEEK_DELAY);
+  }
+}
+
+let startTime = null;
 let currentChannel = 0;
 
 module.exports = {
-  channelUp: () => {
-    currentChannel = (currentChannel + 1) % 10;
-    console.log(currentChannel);
-    play(channel[currentChannel]);
-  },
-  channelDown: () => {
-    currentChannel = currentChannel - 1;
-    if (currentChannel < 0) {
-      currentChannel += 10;
-    }
-    console.log(currentChannel);
-    play(channel[currentChannel]);
-  },
-  setChannel: c => {
-    currentChannel = c;
-    play(channel[currentChannel]);
-  }
+  channelUp: () => setChannel(currentChannel + 1),
+  channelDown: () => setChannel(currentChannel - 1),
+  setChannel
 };

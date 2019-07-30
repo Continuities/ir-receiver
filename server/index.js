@@ -7,10 +7,12 @@ const { listener, mock } = require('./port-listener.js');
 
 const DEBOUNCE_DELAY = 300;
 
-// const listen = mock('BE3BB37', 100);
+// const listen = mock('4DE74847', 1000);
 const listen = listener;
 
+// Hook up IR control
 listen(debounce(data => {
+  console.log(`[sensor] received ${data}`)
   switch (decode(data)) {
     case Button.CHANNELUP: 
       return channelUp();
@@ -38,3 +40,6 @@ listen(debounce(data => {
       return setChannel(0);
   }
 }, DEBOUNCE_DELAY));
+
+// Start the thing
+setChannel(0);
