@@ -13,6 +13,7 @@ const Button = {
   ZERO: 111
 };
 
+// Magill's remote
 const codeMap = {
   'A0A09867': Button.CHANNELUP,
   'A0A0A857': Button.CHANNELDOWN

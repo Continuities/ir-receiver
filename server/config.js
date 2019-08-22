@@ -2,7 +2,7 @@ module.exports = require('yargs')
   .usage('$0 [args]')
   .option('device', {
     alias: 'd',
-    default: '/dev/cu.usbmodem14101'
+    default: '/dev/cu.usbmodem14201'
   })
   .option('baud', {
     alias: 'b',

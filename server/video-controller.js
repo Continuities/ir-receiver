@@ -68,7 +68,6 @@ function tell_vlc(command) {
 function syscall(command) {
   return new Promise((resolve, reject) => {
     exec(command, (err, stdout, stderr) => {
-      //console.log(command + ':: ' + stdout);
       resolve(stdout);
     });
   });

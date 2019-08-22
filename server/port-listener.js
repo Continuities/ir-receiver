@@ -9,9 +9,12 @@ function listener(handler) {
   parser.on('data', d => handler(d.trim()));
 }
 
-function mock(data, delay) {
+function mock(data, delay, max) {
   return handler => {
-    setInterval(() => {
+    const timer = setInterval(() => {
+      if (max != null && --max <= 0) {
+        clearInterval(timer);
+      }
       handler(data);
     }, delay);
   };
