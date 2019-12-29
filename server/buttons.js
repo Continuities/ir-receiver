@@ -13,11 +13,39 @@ const Button = {
   ZERO: 111
 };
 
-// Magill's remote
+// Production remotes
 const codeMap = {
-  'A0A09867': Button.CHANNELUP,
-  'A0A0A857': Button.CHANNELDOWN
+  '3BC': Button.CHANNELUP,
+  'BBC': Button.CHANNELUP,
+  '391': Button.CHANNELDOWN,
+  'B91': Button.CHANNELDOWN,
+  '381': Button.ONE,
+  'B81': Button.ONE,
+  '382': Button.TWO,
+  'B82': Button.TWO,
+  '383': Button.THREE,
+  'B83': Button.THREE,
+  '384': Button.FOUR,
+  'B84': Button.FOUR,
+  '385': Button.FIVE,
+  'B85': Button.FIVE,
+  '386': Button.SIX,
+  'B86': Button.SIX,
+  '387': Button.SEVEN,
+  'B87': Button.SEVEN,
+  '388': Button.EIGHT,
+  'B88': Button.EIGHT,
+  '389': Button.NINE,
+  'B89': Button.NINE,
+  '380': Button.ZERO,
+  'B80': Button.ZERO,
 };
+
+// Magill's remote
+// const codeMap = {
+//   'A0A09867': Button.CHANNELUP,
+//   'A0A0A857': Button.CHANNELDOWN
+// };
 
 // My TV remote
 // const codeMap = {

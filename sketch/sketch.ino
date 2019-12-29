@@ -1,9 +1,18 @@
-void setup() {
-  // put your setup code here, to run once:
+#include <IRremote.h>
+#include <IRremoteInt.h>
 
+const int RECV_PIN = 13;
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+
+void setup(){
+  Serial.begin(9600);
+  irrecv.enableIRIn();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
+void loop(){
+  if (irrecv.decode(&results)){
+    Serial.println(results.value, HEX);
+    irrecv.resume();
+  }
 }

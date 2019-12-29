@@ -81,13 +81,8 @@ function seek(timeInSeconds) {
   return tell_vlc(`seek ${timeInSeconds}`);
 }
 
-function setChannel(newChannel) {
-  currentChannel = newChannel % channel.length;
-  if (currentChannel < 0) {
-    currentChannel += channel.length;
-  }
-  console.log(`[video] setting channel ${currentChannel}`);
-  play(channel[currentChannel]);
+function playChannel(file) {
+  play(file);
   if (startTime == null) {
     startTime = Date.now();
   }
@@ -100,11 +95,35 @@ function setChannel(newChannel) {
   }
 }
 
+function setChannel(newChannel) {
+  const secret = channel.secret[String(newChannel)];
+  if (secret) {
+    console.log(`[video] secret channel ${newChannel}`);
+    playChannel(secret);
+    return;
+  }
+  if (newChannel > channel.regular.length) {
+    console.log(`[video] there is no channel ${newChannel}`);
+    return;
+  }
+  console.log(`[video] setting channel ${newChannel}`);
+  currentChannel = newChannel;
+  playChannel(channel.regular[currentChannel - 1]);
+}
+
+function wrap(num, max) {
+  num = ((num - 1) % max) + 1;
+  if (num <= 0) {
+    num += max;
+  }
+  return num;
+}
+
 let startTime = null;
 let currentChannel = 0;
 
 module.exports = {
-  channelUp: () => setChannel(currentChannel + 1),
-  channelDown: () => setChannel(currentChannel - 1),
+  channelUp: () => setChannel(wrap(currentChannel + 1, channel.regular.length)),
+  channelDown: () => setChannel(wrap(currentChannel - 1, channel.regular.length)),
   setChannel
 };

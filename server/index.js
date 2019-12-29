@@ -44,4 +44,4 @@ listen(debounce(data => {
 }, DEBOUNCE_DELAY));
 
 // Start the thing
-setChannel(0);
+setChannel(1);
